@@ -1,3 +1,24 @@
+/* Estilos generales */
+
+/* Mostrar solo el contenido en español al cargar */
+.lang-es {
+    display: block;
+}
+
+.lang-en {
+    display: none;
+}
+
+/* Cambiar la visibilidad según el idioma seleccionado */
+body.en .lang-es {
+    display: none;
+}
+
+body.en .lang-en {
+    display: block;
+}
+
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -11,6 +32,7 @@ body {
     background: linear-gradient(to bottom, #001f3f, #ffffff);
 }
 
+/* Estilos específicos */
 header {
     position: relative;
     height: 350px;
@@ -24,10 +46,6 @@ header {
     text-align: center;
 }
 
-
-
-
-
 header .overlay {
     background: rgba(0, 0, 0, 0.6);
     padding: 2rem;
@@ -36,7 +54,6 @@ header .overlay {
     max-width: 800px;
     text-align: center;
     position: relative;
-
 }
 
 .profile-photo {
@@ -56,11 +73,80 @@ header .overlay {
     object-fit: cover;
 }
 
-
 h1 {
     font-size: 2.2rem;
     margin-bottom: 0.5rem;
     color: #03dac5;
+}
+
+/* Media queries para diseño responsivo */
+@media (max-width: 768px) {
+    /* Ajustes para tabletas y dispositivos medianos */
+    header .overlay {
+        padding: 1rem;
+    }
+
+    .profile-photo {
+        width: 100px;
+        height: 100px;
+        top: 20px;
+        right: 10px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .certificate-grid {
+        grid-template-columns: 1fr; /* Una columna en tabletas */
+    }
+
+    .content-wrapper, .main, footer {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    /* Ajustes para dispositivos móviles */
+    header {
+        height: 200px;
+        flex-direction: column;
+    }
+
+    .profile-photo {
+        position: static;
+        margin: 0 auto;
+        width: 80px;
+        height: 80px;
+    }
+
+    header .overlay {
+        padding: 0.5rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .certificate-grid {
+        grid-template-columns: 1fr; /* Una columna en móviles */
+    }
+
+    #video-section {
+        position: static;
+        width: 100%;
+        height: auto;
+    }
+
+    .circle {
+        width: 50px;
+        height: 50px;
+    }
+
+    .circle img {
+        width: 30px;
+        height: 30px;
+    }
 }
 
 .contact-info p {
@@ -72,26 +158,15 @@ h1 {
     text-decoration: none;
     transition: color 0.3s;
 }
+
 .social-icon {
-    width: 16px; /* Tamaño del ícono ajustado */
+    width: 16px;
     height: 16px;
     vertical-align: middle;
     margin-right: 6px;
 }
-contact-info a:hover {
-    color: #ffffff;
-}
 
-/* Fondo de la página */
-body {
-    background-image: url('fondo.jpg'); /* Reemplaza 'fondo.jpg' con tu imagen de fondo */
-    background-size: cover;
-    background-position: center;
-    color: #333;
-    line-height: 1.6;
-}
-
-/* Contenedor principal para organizar los elementos */
+/* Contenedor principal */
 .content-wrapper {
     display: flex;
     justify-content: space-between;
@@ -106,9 +181,9 @@ body {
     display: flex;
     flex-direction: column;
     gap: 40px;
-    position:fixed; /* Fija los círculos en el lado izquierdo de la pantalla */
-    top: 360px; /* Ajusta según sea necesario */
-    left: 30px; /* Ajusta según sea necesario */
+    position: fixed;
+    top: 360px;
+    left: 30px;
     z-index: 1000;
 }
 
@@ -124,9 +199,8 @@ body {
 
 .circle img {
     width: 90px;
-    height: 90x;
+    height: 90px;
 }
-
 
 #certificates {
     text-align: center;
@@ -136,30 +210,12 @@ body {
     background-color: #f9f9f9;
 }
 
-#certificates h2 {
-    font-size: 1.8rem;
-    color: #001f3f;
-    border-bottom: 2px solid #03dac5;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-}
-
-.certificate-section {
-    text-align: center;
-    margin: 20px;
-    border: 2px solid #03dac5;
-    padding: 20px;
-    border-radius: 8px;
-}
-
 .certificate-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
-    margin-top: 10px;
-    width: 100%; /* Asegura que ocupe el 100% del contenedor */
-    max-width: 600px; /* Ajusta este ancho para que se adapten tres cuadros */
-    margin: auto; /* Centra la cuadrícula en la página */
+    max-width: 600px;
+    margin: auto;
 }
 
 .certificate-box {
@@ -169,16 +225,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    
 }
 
 .centered-section {
-    text-align: center; /* Centra el texto dentro del contenedor */
-    margin: 0 auto; /* Centra el contenedor en la página */
-    padding: 10px; /* Añade un poco de espacio alrededor */
-    max-width: 600px; /* Limita el ancho del contenedor */
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px;
+    max-width: 600px;
 }
-
 
 .certificate-image {
     width: 100%;
@@ -188,14 +242,34 @@ body {
 
 
 
+/*CERTIFICADOS 2*/
+
+#certificats2 {
+    display: flex;
+    width: 600px;
+    height: 430px; 
+}
+
+.certificats2-image {
+    width: 10px; /* tamaño inicial visible */
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: 0.5; /* valor entre 0 y 1 */
+    transition: 0.5s ease;
+}
+
+.certificats2-image:hover {
+    cursor: crosshair;
+    width: 450px; /* tamaño expandido en hover */
+    opacity: 1;
+}
 
 
-
-/* Estilos para el video */
+/* Video */
 #video-section {
     position: fixed;
-    top: 300px; /* Ajusta según sea necesario */
-    right: 30px; /* Ajusta según sea necesario */
+    top: 300px;
+    right: 30px;
     width: 320px;
     height: 240px;
 }
@@ -206,12 +280,7 @@ body {
     border: 2px solid #03dac5;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-
-
-
-
 
 main {
     max-width: 800px;
@@ -226,29 +295,14 @@ section {
     margin-bottom: 2rem;
 }
 
-
-
 #about {
-    background-color: #f9f9f9; /* Fondo claro para resaltar la sección */
+    background-color: #f9f9f9;
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 2rem;
     line-height: 1.8;
     color: #333;
-}
-
-#about h2 {
-    border-bottom: 2px solid #03dac5;
-    color: #001f3f;
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-}
-
-#about p {
-    text-align: justify;
-    margin-bottom: 1rem;
-    font-size: 1rem;
 }
 
 h2:hover {
@@ -263,55 +317,6 @@ h2:hover {
     color: #001f3f;
     font-size: 1.3rem;
     transition: color 0.3s;
-}
-
-.job h3:hover, .education-item h3:hover {
-    color: #03dac5;
-}
-
-ul {
-    list-style-type: square;
-    padding-left: 1.5rem;
-}
-
-ul li {
-    margin-bottom: 0.5rem;
-}
-
-ul li:hover {
-    color: #03dac5;
-}
-
-#profile-links {
-    display: flex;
-    justify-content: space-around;
-    margin: 2rem 0;
-}
-
-.profile-link {
-    width: 150px;
-    height: 150px;
-    border: 2px solid #03dac5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
-    transition: background-color 0.3s, border-color 0.3s;
-}
-
-.profile-link:hover {
-    background-color: #03dac5;
-    border-color: #001f3f;
-}
-
-.profile-link img {
-    width: 80px;
-    height: 80px;
-    transition: transform 0.3s;
-}
-
-.profile-link:hover img {
-    transform: scale(1.1);
 }
 
 footer {
